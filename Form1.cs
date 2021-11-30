@@ -27,12 +27,12 @@ namespace WindowsFormsAppOsvojiLoto
             bool zastavica = false;
 
 
-            // Promijeniti tekst na Buttonu klikni: Klikni za novo izvačenje
+            // Promijeniti tekst na Buttonu klikni: Klikni za novo izvačenje, klikni za 1., 2. 3,. kuglicu
             // idx globalna varijabla
             // automatsko izvlačenje sve odjednom u 1 buttonu
             // zvukovi ting ting kad se izvuče broj, pauza između izvlačenja
-            // sporo izvlačenje
-            // controls of array
+            // sporo izvlačenje kuglica
+            // controls - array of textboxes
 
 
             TextBox[] brojevi = new TextBox[6];
