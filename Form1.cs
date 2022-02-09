@@ -10,21 +10,23 @@ using System.Windows.Forms;
 
 namespace WindowsFormsAppOsvojiLoto
 {
-    public partial class Form1 : Form
+    public partial class GlavnaForma : Form
     {
-        public Form1()
+        public GlavnaForma()
         {
             InitializeComponent();
            
         }
 
-        private void btn_1_Click(object sender, EventArgs e)
+        private void IzvuciKugliceButton_Click(object sender, EventArgs e)
         {
+            izvuciKuglicu(donjaGranica, gornjaGranica);
+
             // 6 kuglica, 1-36
-            int donji = 1;
-            int gornji = 36;
-            int[] slucajniBrojevi = new int[6];
-            bool zastavica = false;
+            //int donji = 1;
+            //int gornji = 36;
+            //int[] slucajniBrojevi = new int[6];
+            //bool zastavica = false;
 
 
             // Promijeniti tekst na Buttonu klikni: Klikni za novo izvačenje, klikni za 1., 2. 3,. kuglicu
@@ -32,48 +34,48 @@ namespace WindowsFormsAppOsvojiLoto
             // automatsko izvlačenje sve odjednom u 1 buttonu
             // zvukovi ting ting kad se izvuče broj, pauza između izvlačenja
             // sporo izvlačenje kuglica
-            // controls - array of textboxes
+            // controls - array of textboxes 
 
 
-            TextBox[] brojevi = new TextBox[6];
+            //TextBox[] brojevi = new TextBox[6];
 
 
-            listBox1.Items.Clear();
-            Random rnd = new Random();
-            for (int idx = 0; idx < 6; idx++)
-            {
-                zastavica = false;
+            //listBox1.Items.Clear();
+            //Random rnd = new Random();
+            //for (int idx = 0; idx < 6; idx++)
+            //{
+            //    zastavica = false;
 
-                do
-                {
+            //    do
+            //    {
 
-                    slucajniBrojevi[idx] = rnd.Next(donji, gornji);
-               
+            //        slucajniBrojevi[idx] = rnd.Next(donjaGranica, gornjaGranica);
 
-                    if (idx > 0)
-                    {
 
-                        for (int jdx = 0; jdx == idx; jdx++)
-                        {
+            //        if (idx > 0)
+            //        {
 
-                            if (slucajniBrojevi[jdx] == slucajniBrojevi[idx])
-                            {
-                                zastavica = true;
-                                // break;
-                            }
+            //            for (int jdx = 0; jdx == idx; jdx++)
+            //            {
 
-                        }
-                    }
-                } while (zastavica == true);
+            //                if (slucajniBrojevi[jdx] == slucajniBrojevi[idx])
+            //                {
+            //                    zastavica = true;
+            //                    // break;
+            //                }
 
-                listBox1.Items.Add(slucajniBrojevi[idx]);
-                int broj = slucajniBrojevi[idx];
-                
-                txt_1.Text = txt_1.Text + broj.ToString() +"     "; 
-            }
-                        
-           //int len = slucajniBrojevi.Length; 
-            
+            //            }
+            //        }
+            //    } while (zastavica == true);
+
+            //    listBox1.Items.Add(slucajniBrojevi[idx]);
+            //    int broj = slucajniBrojevi[idx];
+
+            //    txt_1.Text = txt_1.Text + broj.ToString() +"     "; 
+            //}
+
+            //int len = slucajniBrojevi.Length; 
+
             //listBox1.Items.Add(len);
             //string str = broj.ToString();
 
@@ -91,15 +93,20 @@ namespace WindowsFormsAppOsvojiLoto
             //    int broj = rnd.Next(lower, upper);
             //    myArray.Append(broj);
             //    listBox1.Items.Add(txt_1.Text);
-               //txt_1.Text = broj.ToString();
+            //txt_1.Text = broj.ToString();
             //}
 
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        
+
+        
+
+        private void PonistiIzvlacenjeButton_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
+            txt_1.Text = "";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -111,5 +118,24 @@ namespace WindowsFormsAppOsvojiLoto
         {
 
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            donjaGranica = 6;
+            gornjaGranica = 45;
+    }
+        public void definiranje(int donjaGranica, int gornjaGranica)
+        {            
+            string radioTekst1 = radioButton1.Text;
+            string radioTekst2 = radioButton2.Text;
+
+        }
     }
 }
+
+
