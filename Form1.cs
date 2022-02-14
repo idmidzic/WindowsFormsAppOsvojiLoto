@@ -15,12 +15,51 @@ namespace WindowsFormsAppOsvojiLoto
         public GlavnaForma()
         {
             InitializeComponent();
-           
+            poljaZaKuglice = new List<TextBox> { textBox1, textBox2, textBox3, textBox4, textBox5, textBox6 };
+
         }
 
-        private void IzvuciKugliceButton_Click(object sender, EventArgs e)
+        private Kuglice kuglice = null;
+
+        private List<TextBox> poljaZaKuglice = null;
+        private int sljedećePolje = 0;
+
+        private void IzvuciKuglicuButton_Click(object sender, EventArgs e)
         {
-            izvuciKuglicu(donjaGranica, gornjaGranica);
+            if (kuglice == null) 
+                kuglice = new Kuglice(1, 37);
+
+            int novaKuglica = kuglice.izvuciKuglicu();
+            poljaZaKuglice[sljedećePolje].Text = novaKuglica.ToString();
+            sljedećePolje++;
+
+            if (sljedećePolje > poljaZaKuglice.Count)
+            {
+
+                // poruka gotovo izvlačenje, MessageBox();
+
+                // Disable IzvuciKuglicuButton, promijeni izgled gumba
+                //IzvuciKuglicuButton.Enabled = false;
+                IzvuciKuglicuButton.BackColor = System.Drawing.SystemColors.ControlLight;
+                IzvuciKuglicuButton.ForeColor = System.Drawing.SystemColors.ControlDark;
+
+                // Enable NovoIzvlacenjeButton, promijeni izgled gumba
+                //NovoIzvlacenjeButton.Enabled = true;
+                NovoIzvlacenjeButton.BackColor = System.Drawing.Color.Khaki;
+                NovoIzvlacenjeButton.ForeColor = System.Drawing.Color.OrangeRed;
+            }
+          
+
+            
+
+
+
+
+
+
+
+
+
 
             // 6 kuglica, 1-36
             //int donji = 1;
@@ -99,40 +138,39 @@ namespace WindowsFormsAppOsvojiLoto
 
         }
 
-        
+             
 
-        
-
-        private void PonistiIzvlacenjeButton_Click(object sender, EventArgs e)
+        private void NovoIzvlacenjeButton_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
-            txt_1.Text = "";
+            if (sljedećePolje > poljaZaKuglice.Count)
+            {
+                // kuglice postavi na null za novo izvlačenje
+                //kuglice = null;
+
+                // Očisti textbox unose
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                textBox6.Text = "";
+
+
+                // Enable IzvuciKuglicuButton, promijeni izgled gumba
+                //IzvuciKuglicuButton.Enabled = true;
+                IzvuciKuglicuButton.BackColor = System.Drawing.Color.LightGreen;
+                IzvuciKuglicuButton.ForeColor = System.Drawing.Color.Green;
+
+                // Disable NovoIzvlacenjeButton, promijeni izgled gumba
+                //NovoIzvlacenjeButton.Enabled = false;
+                NovoIzvlacenjeButton.BackColor = System.Drawing.SystemColors.ControlLight;
+                NovoIzvlacenjeButton.ForeColor = System.Drawing.SystemColors.ControlDark;
+            }
+
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void GlavnaForma_Load(object sender, EventArgs e)
         {
-       
-    }
-
-        private void txt_1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            donjaGranica = 6;
-            gornjaGranica = 45;
-    }
-        public void definiranje(int donjaGranica, int gornjaGranica)
-        {            
-            string radioTekst1 = radioButton1.Text;
-            string radioTekst2 = radioButton2.Text;
 
         }
     }
