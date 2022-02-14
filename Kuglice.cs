@@ -18,12 +18,11 @@ namespace WindowsFormsAppOsvojiLoto
             for (int idx = donjaGranica; idx <= gornjaGranica; idx++)
                 brojeviZaIzvlacenje.Add(idx);
         }
-        
-        
+      
         // Privremeno public varijable dok se ne definiraju metode i pozivi
         // Ipak ostaje 1 do 36, neće se mijenjati tijekom programa
-        private readonly int donjaGranica = 1;
-        private readonly int gornjaGranica = 36;
+        private readonly int donjaGranica;
+        private readonly int gornjaGranica;
 
         //public int[] slucajniBrojevi = new int[6];
         private List<int> izvuceniBrojevi = new List<int>();

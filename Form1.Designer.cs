@@ -32,7 +32,6 @@ namespace WindowsFormsAppOsvojiLoto
             this.IzvuciKuglicuButton = new System.Windows.Forms.Button();
             this.NovoIzvlacenjeButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -45,7 +44,6 @@ namespace WindowsFormsAppOsvojiLoto
             this.label5 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // IzvuciKuglicuButton
@@ -56,7 +54,7 @@ namespace WindowsFormsAppOsvojiLoto
             this.IzvuciKuglicuButton.Location = new System.Drawing.Point(91, 211);
             this.IzvuciKuglicuButton.Name = "IzvuciKuglicuButton";
             this.IzvuciKuglicuButton.Size = new System.Drawing.Size(150, 50);
-            this.IzvuciKuglicuButton.TabIndex = 4;
+            this.IzvuciKuglicuButton.TabIndex = 0;
             this.IzvuciKuglicuButton.Text = "Izvuci kuglicu!";
             this.IzvuciKuglicuButton.UseVisualStyleBackColor = false;
             this.IzvuciKuglicuButton.Click += new System.EventHandler(this.IzvuciKuglicuButton_Click);
@@ -64,12 +62,13 @@ namespace WindowsFormsAppOsvojiLoto
             // NovoIzvlacenjeButton
             // 
             this.NovoIzvlacenjeButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.NovoIzvlacenjeButton.Enabled = false;
             this.NovoIzvlacenjeButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NovoIzvlacenjeButton.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.NovoIzvlacenjeButton.Location = new System.Drawing.Point(284, 211);
             this.NovoIzvlacenjeButton.Name = "NovoIzvlacenjeButton";
             this.NovoIzvlacenjeButton.Size = new System.Drawing.Size(150, 50);
-            this.NovoIzvlacenjeButton.TabIndex = 5;
+            this.NovoIzvlacenjeButton.TabIndex = 7;
             this.NovoIzvlacenjeButton.Text = "Započni novo izvlačenje!";
             this.NovoIzvlacenjeButton.UseVisualStyleBackColor = false;
             this.NovoIzvlacenjeButton.Click += new System.EventHandler(this.NovoIzvlacenjeButton_Click);
@@ -84,23 +83,12 @@ namespace WindowsFormsAppOsvojiLoto
             this.label1.TabIndex = 4;
             this.label1.Text = "1. kuglica:";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(15, 15);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(505, 70);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Igraj i osvoji Loto!";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 26);
+            this.label7.Location = new System.Drawing.Point(32, 29);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(459, 26);
+            this.label7.Size = new System.Drawing.Size(434, 26);
             this.label7.TabIndex = 0;
             this.label7.Text = "Klikni na gumb \'Izvuci kuglicu!\' i izvuci 5 kuglica i 1 dopunsku kuglicu.\r\nZa nov" +
     "i krug izvlačenja, po završetku izvlačenja klikni na gumb \'Započni novo izvlačen" +
@@ -113,7 +101,7 @@ namespace WindowsFormsAppOsvojiLoto
             this.textBox1.Location = new System.Drawing.Point(36, 131);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(50, 43);
-            this.textBox1.TabIndex = 3;
+            this.textBox1.TabIndex = 1;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox2
@@ -123,7 +111,7 @@ namespace WindowsFormsAppOsvojiLoto
             this.textBox2.Location = new System.Drawing.Point(104, 131);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(50, 43);
-            this.textBox2.TabIndex = 6;
+            this.textBox2.TabIndex = 2;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
@@ -143,7 +131,7 @@ namespace WindowsFormsAppOsvojiLoto
             this.textBox3.Location = new System.Drawing.Point(169, 131);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(50, 43);
-            this.textBox3.TabIndex = 8;
+            this.textBox3.TabIndex = 3;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
@@ -163,7 +151,7 @@ namespace WindowsFormsAppOsvojiLoto
             this.textBox4.Location = new System.Drawing.Point(237, 131);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(50, 43);
-            this.textBox4.TabIndex = 10;
+            this.textBox4.TabIndex = 4;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
@@ -183,7 +171,7 @@ namespace WindowsFormsAppOsvojiLoto
             this.textBox5.Location = new System.Drawing.Point(305, 131);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(50, 43);
-            this.textBox5.TabIndex = 12;
+            this.textBox5.TabIndex = 5;
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
@@ -203,7 +191,7 @@ namespace WindowsFormsAppOsvojiLoto
             this.textBox6.Location = new System.Drawing.Point(416, 131);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(50, 43);
-            this.textBox6.TabIndex = 14;
+            this.textBox6.TabIndex = 6;
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
@@ -223,6 +211,7 @@ namespace WindowsFormsAppOsvojiLoto
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(534, 311);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox5);
@@ -234,11 +223,9 @@ namespace WindowsFormsAppOsvojiLoto
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NovoIzvlacenjeButton);
             this.Controls.Add(this.IzvuciKuglicuButton);
-            this.Enabled = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Location = new System.Drawing.Point(20, 0);
             this.MaximizeBox = false;
@@ -246,9 +233,6 @@ namespace WindowsFormsAppOsvojiLoto
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Osvoji Loto!";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.GlavnaForma_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,7 +243,6 @@ namespace WindowsFormsAppOsvojiLoto
         private System.Windows.Forms.Button IzvuciKuglicuButton;
         private System.Windows.Forms.Button NovoIzvlacenjeButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
