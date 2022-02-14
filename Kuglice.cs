@@ -19,7 +19,6 @@ namespace WindowsFormsAppOsvojiLoto
                 brojeviZaIzvlacenje.Add(idx);
         }
       
-        // Privremeno public varijable dok se ne definiraju metode i pozivi
         // Ipak ostaje 1 do 36, neće se mijenjati tijekom programa
         private readonly int donjaGranica;
         private readonly int gornjaGranica;

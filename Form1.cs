@@ -16,7 +16,6 @@ namespace WindowsFormsAppOsvojiLoto
         {
             InitializeComponent();
             poljaZaKuglice = new List<TextBox> { textBox1, textBox2, textBox3, textBox4, textBox5, textBox6 };
-
         }
 
         private Kuglice kuglice = null;
@@ -30,54 +29,60 @@ namespace WindowsFormsAppOsvojiLoto
                 kuglice = new Kuglice(1, 36);
 
             int novaKuglica = kuglice.izvuciKuglicu();
-            poljaZaKuglice[sljedećePolje].Text = novaKuglica.ToString();
-            sljedećePolje++;
-
-            if (sljedećePolje > poljaZaKuglice.Count)
+            
+            if (sljedećePolje < poljaZaKuglice.Count)
             {
+                poljaZaKuglice[sljedećePolje].Text = novaKuglica.ToString();
+                sljedećePolje++;
+            }
+            
+            if (sljedećePolje == 6)
+            {
+                sljedećePolje = 0;
 
                 // poruka gotovo izvlačenje, MessageBox();
 
                 // Disable IzvuciKuglicuButton, promijeni izgled gumba
-                //IzvuciKuglicuButton.Enabled = false;
+                IzvuciKuglicuButton.Enabled = false;
                 IzvuciKuglicuButton.BackColor = System.Drawing.SystemColors.ControlLight;
-                IzvuciKuglicuButton.ForeColor = System.Drawing.SystemColors.ControlDark;
+                IzvuciKuglicuButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+                IzvuciKuglicuButton.Text = "";
 
                 // Enable NovoIzvlacenjeButton, promijeni izgled gumba
-                //NovoIzvlacenjeButton.Enabled = true;
-                NovoIzvlacenjeButton.BackColor = System.Drawing.Color.Khaki;
-                NovoIzvlacenjeButton.ForeColor = System.Drawing.Color.OrangeRed;
+                NovoIzvlacenjeButton.Enabled = true;
+                NovoIzvlacenjeButton.BackColor = System.Drawing.Color.LightGreen;
+                NovoIzvlacenjeButton.ForeColor = System.Drawing.Color.DarkGreen;
+                NovoIzvlacenjeButton.Text = "Započni novo izvlačenje!";
             }
           
         }
              
 
         private void NovoIzvlacenjeButton_Click(object sender, EventArgs e)
-        {
-            if (sljedećePolje > poljaZaKuglice.Count)
-            {
-                // kuglice postavi na null za novo izvlačenje
-                //kuglice = null;
-
-                // Očisti textbox unose
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
-
-
-                // Enable IzvuciKuglicuButton, promijeni izgled gumba
-                //IzvuciKuglicuButton.Enabled = true;
-                IzvuciKuglicuButton.BackColor = System.Drawing.Color.LightGreen;
-                IzvuciKuglicuButton.ForeColor = System.Drawing.Color.Green;
-
-                // Disable NovoIzvlacenjeButton, promijeni izgled gumba
-                //NovoIzvlacenjeButton.Enabled = false;
-                NovoIzvlacenjeButton.BackColor = System.Drawing.SystemColors.ControlLight;
-                NovoIzvlacenjeButton.ForeColor = System.Drawing.SystemColors.ControlDark;
-            }
+        {      
+            
+            // kuglice postavi na null za novo izvlačenje
+            kuglice = null;
+            
+            // Očisti textbox unose
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+                        
+            // Enable IzvuciKuglicuButton, promijeni izgled gumba
+            IzvuciKuglicuButton.Enabled = true;
+            IzvuciKuglicuButton.BackColor = System.Drawing.Color.LightGreen;
+            IzvuciKuglicuButton.ForeColor = System.Drawing.Color.DarkGreen;
+            IzvuciKuglicuButton.Text = "Izvuci kuglicu!";            
+            
+            // Disable NovoIzvlacenjeButton, promijeni izgled gumba
+            NovoIzvlacenjeButton.Enabled = false;
+            NovoIzvlacenjeButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            NovoIzvlacenjeButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+            NovoIzvlacenjeButton.Text = "";
 
         }
 
