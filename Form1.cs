@@ -63,15 +63,16 @@ namespace WindowsFormsAppOsvojiLoto
             
             // kuglice postavi na null za novo izvlačenje
             kuglice = null;
-            
+
             // Očisti textbox unose
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
-            textBox5.Text = "";
-            textBox6.Text = "";
-                        
+            textBox1.Clear();
+               // Text = "";
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+
             // Enable IzvuciKuglicuButton, promijeni izgled gumba
             IzvuciKuglicuButton.Enabled = true;
             IzvuciKuglicuButton.BackColor = System.Drawing.Color.LightGreen;

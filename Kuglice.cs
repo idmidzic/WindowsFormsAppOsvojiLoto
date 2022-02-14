@@ -39,10 +39,10 @@ namespace WindowsFormsAppOsvojiLoto
             return izvuceniBroj;
         }
         //property 
-        public int[] IzvuceniBrojevi
-        {
-            get { return izvuceniBrojevi.ToArray(); }
-        }
+        //public int[] IzvuceniBrojevi
+        //{
+        //    get { return izvuceniBrojevi.ToArray(); }
+        //}
            
     }
 }
